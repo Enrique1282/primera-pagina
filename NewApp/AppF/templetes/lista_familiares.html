@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de familiares</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra a la tabla */
+        }
+        
+        h1 {
+            color: rgb(255, 0, 76);
+        
+        }
+        
+        th {
+            background-color: yellow;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid black; /* Añade un borde a los encabezados */
+        }
+        
+        td {
+            color: blue;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid black; /* Añade un borde a las celdas */
+        }
+        
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+        /* Ejemplo de gradiente lineal */
+body {
+  background: linear-gradient(to right, #00fff2, #0000ff);
+}
+
+/* Ejemplo de gradiente radial */
+h1 {
+  background: radial-gradient(circle, #00ffbf, #0000ff);
+}
+       
+
+        </style> 
+</head>
+<body>
+    <h1>Lista de familiares</h1>
+    <table>
+        <tr>
+          <th>N°</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Parentesco</th>
+          <th>Edad</th>
+        </tr>
+        {% for familiar in familiares %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ familiar.nombre }}</td>
+          <td>{{ familiar.apellido }}</td>
+          <td>{{ familiar.parentesco }}</td>
+          <td>{{ familiar.edad }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+</body>
+</html>
